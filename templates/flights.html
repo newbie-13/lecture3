@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Flights
+{% endblock %}
+
+{% block body %}
+  <h1>Flights Details</h1>
+
+  <table style="width:800px">
+
+      <tr>
+        <th style="width:auto">Flight ID</th>
+        <th style="width:auto">Origin</th>
+        <th style="width:auto">Destination</th>
+        <th style="width:auto">Duration</th>
+      </tr>
+
+      {% for flight in flights %}
+        <tr>
+          <td><a href="{{url_for('passengers', flight_id=flight.id)}}">{{flight.id}}</a></td>
+          <td>{{flight.origin}}</td>
+          <td>{{flight.destination}}</td>
+          <td>{{flight.duration}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

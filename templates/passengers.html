@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Passengers List
+{% endblock %}
+
+{% block body %}
+  <h1>Passengers List</h1>
+  <br>
+  <ul>
+    {% for passenger in passengers %}
+      <li>{{passenger.name}}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
